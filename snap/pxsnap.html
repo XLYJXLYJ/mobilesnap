@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>零一机器人-从0到1创造你的机器人</title>
+		<!-- <link rel="shortcut icon" href="manykit/bianchengwan_w.ico"> -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="text/javascript" src="manykit/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="morphic.js"></script>
+		<script type="text/javascript" src="widgets.js"></script>
+		<script type="text/javascript" src="blocks.js"></script>
+		<script type="text/javascript" src="manykit/blocks.js"></script>
+		<script type="text/javascript" src="manykit/arduino.js"></script>
+		<script type="text/javascript" src="threads.js"></script>
+		<script type="text/javascript" src="manykit/threads.js"></script>
+		<script type="text/javascript" src="objects.js"></script>
+		<script type="text/javascript" src="manykit/objects.js"></script>
+		<script type="text/javascript" src="gui.js"></script>
+		<script type="text/javascript" src="manykit/gui.js"></script>
+		<script type="text/javascript" src="paint.js"></script>
+		<script type="text/javascript" src="lists.js"></script>
+		<script type="text/javascript" src="byob.js"></script>
+		<script type="text/javascript" src="tables.js"></script>
+		<script type="text/javascript" src="symbols.js"></script>
+		<script type="text/javascript" src="xml.js"></script>
+		<script type="text/javascript" src="store.js"></script>
+		<script type="text/javascript" src="locale.js"></script>
+		<script type="text/javascript" src="manykit/locale.js"></script>
+		<script type="text/javascript" src="cloud.js"></script>
+		<script type="text/javascript" src="manykit/cloud.js"></script>
+		<script type="text/javascript" src="sha512.js"></script>
+		<script type="text/javascript" src="FileSaver.min.js"></script>
+		<script type="text/javascript" src="manykit/base64.js"></script>
+		<script type="text/javascript">
+			var world;
+			var ide;
+			window.onload = function () {
+				world = new WorldMorph(document.getElementById('world'));
+                world.worldCanvas.focus();
+				ide = new IDE_Morph();
+				ide.openIn(world);
+        		loop();
+			};
+			function loop() {
+        		requestAnimationFrame(loop);
+				world.doOneCycle();
+			}
+		</script>
+	</head>
+	<body style="margin: 0;">
+		<canvas id="world" tabindex="1" style="position: absolute;" />
+	</body>
+</html>
