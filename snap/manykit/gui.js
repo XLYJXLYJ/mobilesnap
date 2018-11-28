@@ -2306,7 +2306,7 @@ IDE_Morph.prototype.openIn = function (world) {
             });
             playerresultxml.then(function (projectData) {
                 var msg;
-
+                
                 // alert(projectData)
                 myself.nextSteps([
                     function () {

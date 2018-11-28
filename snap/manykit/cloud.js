@@ -108,7 +108,7 @@ IDE_Morph.prototype.openIn = function (world) {
                     // console.log(response.data)
                 })
             });
-            playerresultxml.then(function (projectData) {
+            playerresultxml.then(function (projectData) {  
                 var msg;
                 // alert(projectData)
                 myself.nextSteps([
@@ -124,8 +124,8 @@ IDE_Morph.prototype.openIn = function (world) {
                         ) {
                             myself.rawOpenProjectString(projectData);
                         }
-                        // myself.hasChangedMedia = true;
-                        // myself.toggleAppMode(true)
+                        myself.hasChangedMedia = true;
+                        myself.toggleAppMode(true)
                     },
                     function () { 
                         dict = myself.cloud.parseDict(location.hash.substr(11));
